@@ -86,7 +86,9 @@ while 1
     
     [~, imax] = max(areanew);
 
+    W = warning('off');
     dt = delaunayTriangulation(xbs{imax},ybs{imax});
+    warning(W);
     k = convexHull(dt);
     xyhull = dt.Points(k,:);
     
@@ -108,5 +110,6 @@ end
 
 geom = polygeom(xbs{imax}, ybs{imax});
 xl = geom(2);
+yl = geom(3);
 
 
