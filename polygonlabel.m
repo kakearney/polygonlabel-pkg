@@ -46,7 +46,7 @@ if Opt.plot
     hfig = figure;
     [f,v] = poly2fv(x,y);
     hp = patch('faces', f, 'vertices', v);
-    set(hp, 'facecolor', rgb('gray'), 'edgecolor', 'none');
+    set(hp, 'facecolor', ones(1,3)*0.5, 'edgecolor', 'none');
     drawnow;
     hold on;
 end
