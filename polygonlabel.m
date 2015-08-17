@@ -10,6 +10,10 @@ function [xl,yl] = polygonlabel(x, y, varargin)
 % reducing the number of vertices prior to calling this function, since
 % extra vertices can increase computation time significantly.
 %
+% The underlying algorithm is based on Kang & Elhami, 2001, ("Using
+% Shape Analyses for Placement of Polygon Labels", ESRI 2001 Int. User
+% Conf).
+%
 % Input variables:
 %
 %   x:  x-coordinates of polygons, nan-delimited vectors with clockwise
