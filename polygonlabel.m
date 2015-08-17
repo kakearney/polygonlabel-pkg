@@ -5,9 +5,10 @@ function [xl,yl] = polygonlabel(x, y, varargin)
 % want to find a nice open space within the polygon to place a label.  The
 % "best" place to label often isn't the centroid of the polygon.
 %
-% This is designed to be used with cartesian coordinate polygon; project
+% This is designed to be used with cartesian coordinate polygons; project
 % map polygons prior to calling.  For very complex polygons, I recommend
-% reducing the number of vertices prior to calling this function.
+% reducing the number of vertices prior to calling this function, since
+% extra vertices can increase computation time significantly.
 %
 % Input variables:
 %
