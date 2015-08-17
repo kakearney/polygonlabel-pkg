@@ -1,12 +1,14 @@
 ## `polygonlabel.m` Documentation
 
-This function was designed to label convex polygons on a map, where you
+This function was designed to label polygons on a map, where you
 want to find a nice open space within the polygon to place a label.  The
-"best" place to label often isn't the centroid of the polygon.
+"best" place to label often isn't the centroid of the polygon, or the 
+center of the bounding box, particularly when dealing with non-convex 
+polygons or polygons with holes in them.
 
 This is designed to be used with cartesian coordinate polygons; project
 map polygons prior to calling.  For very complex polygons, I recommend
-reducing the number of vertices prior to calling this function, since
+reducing the number of vertices (via `reducem` or similar) prior to calling this function, since
 extra vertices can increase computation time significantly.
 
 The underlying algorithm is based on Kang & Elhami, 2001, ("Using
