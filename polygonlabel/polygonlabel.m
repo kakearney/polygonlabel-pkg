@@ -4,9 +4,9 @@ function [xl,yl] = polygonlabel(x, y, varargin)
 % [xl,yl] = polygonlabel(x, y)
 % [xl,yl] = polygonlabel(x, y, 'plot', true)
 %
-% This function was designed to label convex polygons on a map, where you
-% want to find a nice open space within the polygon to place a label.  The
-% "best" place to label often isn't the centroid of the polygon.
+% This function was designed to label nonconvex polygons on a map, where
+% you want to find a nice open space within the polygon to place a label.
+% The "best" place to label often isn't the centroid of the polygon. 
 %
 % This is designed to be used with cartesian coordinate polygons; project
 % map polygons prior to calling.  For very complex polygons, I recommend
