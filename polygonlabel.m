@@ -1,6 +1,9 @@
 function [xl,yl] = polygonlabel(x, y, varargin)
 %POLYGONLABEL Calculate coordinates for polygon label
 %
+% [xl,yl] = polygonlabel(x, y)
+% [xl,yl] = polygonlabel(x, y, 'plot', true)
+%
 % This function was designed to label convex polygons on a map, where you
 % want to find a nice open space within the polygon to place a label.  The
 % "best" place to label often isn't the centroid of the polygon.
@@ -16,23 +19,26 @@ function [xl,yl] = polygonlabel(x, y, varargin)
 %
 % Input variables:
 %
-%   x:  x-coordinates of polygons, nan-delimited vectors with clockwise
-%       external contours and counterclockwise inner contours (holes).
+%   x:      x-coordinates of polygons, nan-delimited vectors with clockwise
+%           external contours and counterclockwise inner contours (holes). 
 %
-%   y:  y-coordinates of polygons
+%   y:      y-coordinates of polygons
+%
+% Optional input variables (passed as parameter/value pairs)
+%
+%   plot:   logical scalar.  If true, plots the polygon and
+%           buffered-polygon as it is calculated (primarily for debugging
+%           purposes).
 %
 % Output variables:
 %
-%   xl: x coordinate of best label position
+%   xl:     x coordinate of best label position
 %
-%   yl: y coordinate of best label position
+%   yl:     y coordinate of best label position
 
 % Copyright 2015 Kelly Kearney
 
-
 Opt.plot = false;
-Opt.reduce = false;
-
 Opt = parsepv(Opt, varargin);
 
 [xs,ys] = polysplit(x,y);
